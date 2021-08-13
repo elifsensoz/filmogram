@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
             movies: movies,
             searchOptions: req.query})
         
-    } catch(err){
+    } catch{
         res.redirect('/')
     }
     
