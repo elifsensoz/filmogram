@@ -1,2 +1,21 @@
-<label>Name </label>
-<input type= "text" name="name" value="<%= movie.name%>">
+<div>
+    <label>Title </label>
+    <input type= "text" name="name" value="<%= movie.name%>">
+</div>
+<div>
+    <label>Director </label>
+    <input type= "text" name="director" value="<%= movie.director%>">
+</div>
+<div>
+    <label>Release Date </label>
+    <input type= "date" name="releaseDate" 
+        value="<%= movie.releaseDate == null ? '' : movie.releaseDate.toISOString().split('T')[0] %>">
+</div>
+<div>
+    <label>Cover </label>
+    <input type= "file" name="cover">
+</div>
+<div>
+    <label>Description </label>
+    <textarea name="description"><%= movie.description %></textarea>
+</div>
