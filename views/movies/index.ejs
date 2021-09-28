@@ -19,6 +19,12 @@
 <div>
     <% movies.forEach(movie => { %>
     
-        <img height="150" width="100" src="<%= movie.coverImagePath %>">  
+        <a href="/movies/<%= movie.id %>">
+            <img height="150" width="100" src="<%= movie.coverImagePath %>">
+        </a>
+        <a href="/movies/<%= movie.id %>">View</a>
+        <a href="/movies/<%= movie.id %>/edit">Edit</a>
+        <%- include('../partials/deleteForm', {url: `/movies/${movie.id}`}) %>
+
     <% }) %> 
 </div>
