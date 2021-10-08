@@ -1,4 +1,4 @@
-<h2>Search Movies</h2>
+<h2 class= "page-header">Search Movies</h2>
 
 <form action = "/movies" method="GET"> 
     <div>    
@@ -22,9 +22,11 @@
         <a href="/movies/<%= movie.id %>">
             <img height="150" width="100" src="<%= movie.coverImagePath %>">
         </a>
-        <a href="/movies/<%= movie.id %>">View</a>
-        <a href="/movies/<%= movie.id %>/edit">Edit</a>
-        <%- include('../partials/deleteForm', {url: `/movies/${movie.id}`}) %>
+        <div class="btn-row">
+            <a class="btn btn-primary" href="/movies/<%= movie.id %>">View</a>
+            <a class="btn btn-primary" href="/movies/<%= movie.id %>/edit">Edit</a>
+            <%- include('../partials/deleteForm', {url: `/movies/${movie.id}`}) %>
+        </div>
 
     <% }) %> 
 </div>
