@@ -1,19 +1,27 @@
 <h2 class= "page-header">Search Movies</h2>
 
 <form action = "/movies" method="GET"> 
-    <div>    
-        <label>Name</label>
-        <input type="text" name="name" value="<%= searchOptions.name %>">
+    <div class="form-row">
+        <div class="form-item">    
+            <label>Name</label>
+            <input type="text" name="name" value="<%= searchOptions.name %>">
+    
+        </div>
     </div>
-    <div>    
-        <label>Released After</label>
-        <input type="date" name="releasedAfter" value="<%= searchOptions.releasedAfter %>">
+    <div class="form-row">
+        <div class="form-item">     
+            <label>Released After</label>
+            <input type="date" name="releasedAfter" value="<%= searchOptions.releasedAfter %>">
+        </div>
+    
+        <div class="form-item">    
+            <label>Released Before</label>
+            <input type="date" name="releasedBefore" value="<%= searchOptions.releasedBefore %>">
+        </div>
     </div>
-    <div>    
-        <label>Released Before</label>
-        <input type="date" name="releasedBefore" value="<%= searchOptions.releasedBefore %>">
+    <div class="form-row form-row-end">
+        <button class="btn btn-primary" type ="submit">Search</button>
     </div>
-    <button type ="submit">Search</button>
 </form>
 <br>
 <div>
@@ -22,11 +30,12 @@
         <a href="/movies/<%= movie.id %>">
             <img height="150" width="100" src="<%= movie.coverImagePath %>">
         </a>
-        <div class="btn-row">
+        <!--
+        <div class="btn-row"></div>
             <a class="btn btn-primary" href="/movies/<%= movie.id %>">View</a>
             <a class="btn btn-primary" href="/movies/<%= movie.id %>/edit">Edit</a>
             <%- include('../partials/deleteForm', {url: `/movies/${movie.id}`}) %>
         </div>
-
+        -->
     <% }) %> 
 </div>
