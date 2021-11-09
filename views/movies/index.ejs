@@ -25,17 +25,5 @@
 </form>
 <br>
 <div>
-    <% movies.forEach(movie => { %>
-    
-        <a href="/movies/<%= movie.id %>">
-            <img height="150" width="100" src="<%= movie.coverImagePath %>">
-        </a>
-        <!--
-        <div class="btn-row"></div>
-            <a class="btn btn-primary" href="/movies/<%= movie.id %>">View</a>
-            <a class="btn btn-primary" href="/movies/<%= movie.id %>/edit">Edit</a>
-            <%- include('../partials/deleteForm', {url: `/movies/${movie.id}`}) %>
-        </div>
-        -->
-    <% }) %> 
+    <%- include('../partials/movieGrid', {movies: movies, large: true})  %> 
 </div>

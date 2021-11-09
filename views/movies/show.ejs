@@ -1,9 +1,16 @@
 <h2 class= "page-header"><%= movie.name %></h2>
-<img width="200" height="300" src="<%= movie.coverImagePath  %> ">
-<div>Director: <%= movie.director %> </div>
-<div>Release Date: <%= movie.releaseDate.toDateString() %> </div>
-<div>Description: <%= movie.description %> </div>
-<div class="form-row btn-row">
-    <a class="btn btn-primary" href="/movies/<%= movie.id %>/edit">Edit</a>
-    <%- include('../partials/deleteForm', { url: `/movies/${movie.id}` }) %>
+
+<div class="movie-details">
+    <div>
+        <img width="200" height="300" src="<%= movie.coverImagePath  %> " />
+        <div class="form-row btn-row">
+            <a class="btn btn-primary" href="/movies/<%= movie.id %>/edit">Edit</a>
+            <%- include('../partials/deleteForm', { url: `/movies/${movie.id}` }) %>
+        </div>
+    </div>
+    <div class="movie-details-grid">
+        <div class="movie-details-label">Director: </div> <div><%= movie.director %> </div>
+        <div class="movie-details-label">Release Date: </div> <div><%= movie.releaseDate.toDateString() %> </div>
+        <div class="movie-details-label">Description: </div> <div><%= movie.description %> </div>
+    </div>
 </div>
